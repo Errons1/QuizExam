@@ -32,3 +32,8 @@ create table highScore
         primary key (id_highScore)
 );
 
+TRUNCATE QuizGame.multiQuiz;
+
+INSERT INTO QuizGame.multiQuiz(question, answerA, answerB, answerC, answerD, solution)
+VALUES ('What is 2 + 2?', 2, '1. Number 3', '2. Number 2', '3. Number 7', '4. Number 5');
+

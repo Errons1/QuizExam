@@ -1,9 +1,14 @@
 import dto.MultiQuiz;
 
-public class Main {
-    public static void main(String[] args) {
-        System.out.println("Hello World");
+import java.sql.SQLException;
 
-        MultiQuiz multiQuiz = new MultiQuiz();
+public class Main {
+    public static void main(String[] args) throws SQLException {
+
+        Jdbc jdbc = new Jdbc();
+        jdbc.populateDB();
+
+
+
     }
 }
