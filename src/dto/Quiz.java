@@ -20,7 +20,7 @@ abstract public class Quiz {
 
     abstract public void printQuestion();
 
-    abstract public void checkAnswer();
+    abstract public boolean checkAnswer(int answer);
 
 
     public String getQuestion() {

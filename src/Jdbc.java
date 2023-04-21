@@ -1,3 +1,4 @@
+import dto.HighScore;
 import dto.MultiQuiz;
 
 import java.sql.*;
@@ -38,7 +39,7 @@ public class Jdbc {
         ArrayList<MultiQuiz> multiQuizArrayList = new ArrayList<>();
         String sqlGetMultiQuiz = """
                 SELECT *
-                FROM QuizGame.highScore
+                FROM QuizGame.multiQuiz
                 """;
 
         Connection connection = connectDB();
@@ -62,4 +63,20 @@ public class Jdbc {
         return multiQuizArrayList;
     }
 
+    public void saveUserScore(HighScore highScore) throws SQLException {
+        String sqlSaveUserScore = """
+                INSERT INTO QuizGame.highScore (user, score, topic)
+                VALUES (?, ?, ?);
+                """;
+
+        Connection connection = connectDB();
+        PreparedStatement preparedStatement = connection.prepareStatement(sqlSaveUserScore);
+        preparedStatement.setString(1, highScore.getUser());
+        preparedStatement.setInt(2, highScore.getScore());
+        preparedStatement.setString(3, highScore.getTopic());
+        preparedStatement.executeUpdate();
+
+        preparedStatement.close();
+        connection.close();
+    }
 }

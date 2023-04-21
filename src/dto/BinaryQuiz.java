@@ -15,8 +15,8 @@ public class BinaryQuiz extends Quiz{
     }
 
     @Override
-    public void checkAnswer() {
-
+    public boolean checkAnswer(int answer) {
+        return true;
     }
 
 }

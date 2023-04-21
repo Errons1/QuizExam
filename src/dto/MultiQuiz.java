@@ -2,10 +2,10 @@ package dto;
 
 public class MultiQuiz extends Quiz{
 
-    String answerA;
-    String answerB;
-    String answerC;
-    String answerD;
+    private String answerA;
+    private String answerB;
+    private String answerC;
+    private String answerD;
 
     public MultiQuiz() {
     }
@@ -20,12 +20,16 @@ public class MultiQuiz extends Quiz{
 
     @Override
     public void printQuestion() {
-
+        System.out.println(super.question);
+        System.out.println(answerA);
+        System.out.println(answerB);
+        System.out.println(answerC);
+        System.out.println(answerD);
     }
 
     @Override
-    public void checkAnswer() {
-
+    public boolean checkAnswer(int answer) {
+        return super.solution == answer;
     }
 
     public String getAnswerA() {

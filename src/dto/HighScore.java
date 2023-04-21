@@ -2,9 +2,9 @@ package dto;
 
 public class HighScore {
 
-    String user;
-    int score;
-    String topic;
+    private String user;
+    private int score;
+    private String topic;
 
     public HighScore() {
     }
