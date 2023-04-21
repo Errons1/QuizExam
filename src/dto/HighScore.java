@@ -15,6 +15,10 @@ public class HighScore {
         this.topic = topic;
     }
 
+    public void printHighscore() {
+        System.out.println("Name:\t" + user + "\t\tScore:\t" + score + "\t\tTopic:\t" + topic);
+    }
+
     public String getUser() {
         return user;
     }

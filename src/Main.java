@@ -1,6 +1,10 @@
+import dto.BinaryQuiz;
+import dto.HighScore;
 import dto.MultiQuiz;
+import dto.Quiz;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class Main {
 

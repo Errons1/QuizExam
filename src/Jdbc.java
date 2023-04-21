@@ -79,4 +79,27 @@ public class Jdbc {
         preparedStatement.close();
         connection.close();
     }
+
+    public ArrayList<HighScore> getHighscoreTable() throws SQLException {
+        ArrayList<HighScore> highScores = new ArrayList<>();
+        String sqlGetHighscoreTable = """
+                SELECT * 
+                FROM QuizGame.highScore;
+                """;
+
+        Connection connection = connectDB();
+        PreparedStatement preparedStatement = connection.prepareStatement(sqlGetHighscoreTable);
+        ResultSet resultSet = preparedStatement.executeQuery();
+
+        while (resultSet.next()) {
+            String user = resultSet.getString(2);
+            int score = resultSet.getInt(3);
+            String topic = resultSet.getString(4);
+
+            HighScore highScore = new HighScore(user, score, topic);
+            highScores.add(highScore);
+        }
+
+        return highScores;
+    }
 }

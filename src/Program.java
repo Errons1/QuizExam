@@ -35,6 +35,11 @@ public class Program {
                     printMainMenu();
                     break;
                 }
+                case "3" : {
+                    showHighScore();
+                    printMainMenu();
+                    break;
+                }
                 case "4" : {
                     isRunning = false;
                     System.out.println("Application exiting");
@@ -48,6 +53,7 @@ public class Program {
 
 
     }
+
 
     private void startMultiQuiz() throws SQLException {
         ArrayList<MultiQuiz> quiz = jdbc.getMultiQuiz();
@@ -92,4 +98,10 @@ public class Program {
     }
 
 
+    private void showHighScore() throws SQLException {
+        ArrayList<HighScore> highScoresTable = jdbc.getHighscoreTable();
+        for (HighScore highScore : highScoresTable) {
+            highScore.printHighscore();
+        }
+    }
 }
