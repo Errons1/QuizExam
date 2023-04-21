@@ -6,6 +6,10 @@ import java.util.ArrayList;
 
 public class Jdbc {
 
+    public Jdbc() throws ClassNotFoundException {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+    }
+
     private Connection connectDB() throws SQLException {
         String url = "jdbc:mysql://127.0.0.1:3306/QuizGame";
         String username = "root";
